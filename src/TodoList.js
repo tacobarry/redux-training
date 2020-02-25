@@ -3,21 +3,24 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import * as todoActions from './actions/todos'
+import { styles } from './styles'
 
 class TodoList extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
-  }
 
-  state = {
-    newTodoText: ''
+    this.state = {
+      newTodoText: ''
+    }
   }
 
   addNewTodo = () => {
     this.props.addTodo(this.state.newTodoText)
-
     this.setState({ newTodoText: '' })
+  }
+
+  changeTodo = (todo) => {
+    this.props.changeTodo(todo)
   }
 
   render() {
@@ -25,7 +28,13 @@ class TodoList extends Component {
       <div>
         <ul>
           {this.props.todos.map(todo => (
-            <li key={todo.id}>{todo.text}</li>
+            <li
+              key={todo.id}
+              style={(todo.done) ? { ...styles.todo.done } : { }}
+              onClick={() => this.changeTodo(todo)}
+            >
+              {todo.text}
+            </li>
           ))}
         </ul>
 

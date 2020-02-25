@@ -20,7 +20,6 @@ class Range extends Component {
     this.state = {
       range: 1
     }
-    console.log('props::::', props)
   }
 
   increment = () => {
