@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const OutputValue = ({text, value}) => (
   <div>
@@ -7,3 +8,8 @@ const OutputValue = ({text, value}) => (
 )
 
 export default OutputValue
+
+OutputValue.propTypes = {
+  text: PropTypes.string,
+  value: PropTypes.number
+}

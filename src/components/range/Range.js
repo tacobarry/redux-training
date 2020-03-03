@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import OutputValue from '../outputvalue/OutputValue'
@@ -12,8 +12,11 @@ const rangeActions = { changeRange }
 
 class Range extends Component {
   static propTypes = {
-    range: PropTypes.number
+    range: PropTypes.number,
+    increment: PropTypes.func,
+    decrement: PropTypes.func
   }
+
   constructor(props) {
     super(props)
 

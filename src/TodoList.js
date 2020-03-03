@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import * as todoActions from './actions/todos'
 import { styles } from './styles'
 
 class TodoList extends Component {
+  static propTypes = {
+    todos: PropTypes.array,
+    addNewTodo: PropTypes.func,
+    changeTodo: PropTypes.func
+  }
+
   constructor(props) {
     super(props)
 
