@@ -42,7 +42,7 @@ class Range extends Component {
           onChange={e => this.setState({ range: e.target.value })}
         />
         <button onClick={this.increment}>+</button>
-        <OutputValue text={'Seu contador é igual a: '} value={this.props.countRange} />
+        <OutputValue text={'Seu contador é igual a:'} value={this.props.countRange} />
         {/* <p>Seu contador é: {this.props.countRange}</p> */}
       </div>
     )
