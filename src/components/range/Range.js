@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import OutputValue from '../outputvalue/OutputValue'
-
-// import styles from './styles'
+import OutputValue from '../utils/outputvalue/OutputValue'
+import If from '../utils/if/If'
 
 import { INC, DEC, changeRange } from './rangeAction'
 
@@ -42,7 +41,9 @@ class Range extends Component {
           onChange={e => this.setState({ range: e.target.value })}
         />
         <button onClick={this.increment}>+</button>
-        <OutputValue text={'Seu contador é igual a:'} value={this.props.countRange} />
+        <If show={true}>
+          <OutputValue text={'Seu contador é igual a:'} value={this.props.countRange} />
+        </If>
         {/* <p>Seu contador é: {this.props.countRange}</p> */}
       </div>
     )

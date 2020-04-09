@@ -2,8 +2,12 @@ import { combineReducers } from 'redux'
 
 import todos from './todos'
 import rangeReducer from '../components/range/rangeReducer'
+import ChangeThemeReducer from '../components/change_theme/changeThemeReducer'
 
-export default combineReducers({
+const rootReducer =  combineReducers({
   todos,
-  rangeReducer
+  rangeReducer,
+  theme: ChangeThemeReducer
 })
+
+export default rootReducer

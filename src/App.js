@@ -6,19 +6,26 @@ import store from './store'
 import TodoList from './TodoList'
 import CounterTodos from './CounterTodos'
 import Range from './components/range/Range'
+import DemoBox from './components/utils/demobox/Demobox'
+import ChangeTheme from './components/change_theme/ChangeTheme'
+import ThemeContainer from './components/utils/themecontainer'
 
 class App extends Component {
-
   render() {
+
     return (
       <Provider store={store}>
-        <div>
-          <TodoList />
-          <CounterTodos />
-        </div>
-        <div>
-          <Range />
-        </div>
+        <ThemeContainer>
+          <div>
+            <TodoList />
+            <CounterTodos />
+          </div>
+          <div>
+            <Range />
+            <DemoBox />
+            <ChangeTheme />
+          </div>
+        </ThemeContainer>
       </Provider>
     )
   }
