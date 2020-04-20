@@ -33,6 +33,13 @@ class TodoList extends Component {
   render() {
     return (
       <div>
+        <input
+          type="text"
+          value={this.state.newTodoText}
+          onChange={(e) => this.setState({ newTodoText: e.target.value })}
+        />
+        <button onClick={this.addNewTodo}>Novo Item</button>
+
         <ul>
           {this.props.todos.map(todo => (
             <li
@@ -44,13 +51,6 @@ class TodoList extends Component {
             </li>
           ))}
         </ul>
-
-        <input
-          type="text"
-          value={this.state.newTodoText}
-          onChange={(e) => this.setState({ newTodoText: e.target.value })}
-        />
-        <button onClick={this.addNewTodo}>Novo Item</button>
       </div>
     )
   }

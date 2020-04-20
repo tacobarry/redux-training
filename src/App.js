@@ -16,18 +16,38 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ThemeContainer>
-          <div>
-            <TodoList />
-            <CounterTodos />
-          </div>
-          <div>
-            <Range />
-            <DemoBox />
-            <ChangeTheme />
+          <div style={styles.divContainerRow}>
+            <div>
+              <TodoList />
+              <CounterTodos />
+            </div>
+            <div>
+              <Range />
+            </div>
+            <div>
+              <DemoBox />
+              <ChangeTheme />
+            </div>
           </div>
         </ThemeContainer>
       </Provider>
     )
+  }
+}
+
+const styles = {
+  divContainerRow: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+
+  divContainerCol: {
+    display: 'flex',
+    flex:1,
+    flexDirection: 'column'
   }
 }
 

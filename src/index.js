@@ -9,7 +9,15 @@ import App from './App'
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 export const GlobalStyle = createGlobalStyle`
-  ${normalize}
+  ${normalize};
+
+  html {
+    font-size: 16px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 `
 
 const Root = () =>

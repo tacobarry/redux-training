@@ -23,7 +23,12 @@ const ChangeTheme = props => {
   }
 
   const negativeTheme = () => {
-    console.log('negative Theme')
+    const negative = {
+      ...props.theme,
+      secondaryColor: props.theme.backgroundColor,
+      backgroundColor: props.theme.secondaryColor
+    }
+    props.switchTheme(negative)
   }
 
   return (

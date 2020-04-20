@@ -7,6 +7,7 @@ const INITIAL_STATE = { theme: defaultTheme }
 const changeThemeReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CHANGE_THEME:
+      // TODO: save into localStorage;
       return {
         ...state,
         theme: action.payload
